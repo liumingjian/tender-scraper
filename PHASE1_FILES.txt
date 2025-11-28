@@ -1,0 +1,81 @@
+# Phase 1 MVP - 项目文件清单
+
+## 根目录
+- README.md                     # 项目总览
+- docker-compose.yml            # Docker Compose 配置
+- setup.sh                      # 快速安装脚本
+
+## 文档 (docs/)
+- brains.md                     # 技术架构方案
+- prd.md                        # 产品需求文档
+- implementation_plan.md        # 实施计划
+- task.md                       # 任务清单
+- PHASE1_SUMMARY.md            # Phase 1 完成总结
+
+## 后端 (backend/)
+
+### 应用代码 (app/)
+- config.py                     # 配置管理
+- database.py                   # 数据库连接
+- main.py                       # FastAPI 应用入口
+
+### 模型 (app/models/)
+- tender.py                     # Tender & SourceConfig 模型
+
+### Schemas (app/schemas/)
+- tender.py                     # Pydantic 数据模型
+
+### 路由 (app/routers/)
+- tenders.py                    # 招标信息 API
+- sources.py                    # 数据源配置 API
+- tasks.py                      # 任务执行 API
+
+### 服务层 (app/services/)
+#### 采集模块 (scraper/)
+- base.py                       # 抽象基类
+- http_scraper.py              # HTTP 采集器
+- adapters.py                   # 网站适配器
+
+#### AI 模块 (ai/)
+- extraction.py                 # Gemini 提取服务
+
+#### 其他服务
+- filter.py                     # 过滤服务
+- task.py                       # 任务服务
+
+### 测试 (tests/)
+- conftest.py                   # 测试配置
+- test_filter.py               # 过滤服务测试
+- test_schemas.py              # Schema 测试
+- test_models.py               # 模型测试
+
+### 数据库迁移 (alembic/)
+- env.py                        # Alembic 环境配置
+- script.py.mako               # 迁移脚本模板
+- alembic.ini                   # Alembic 配置
+
+### 配置文件
+- requirements.txt              # 生产依赖
+- requirements-dev.txt          # 开发依赖
+- pyproject.toml               # Black/Ruff/MyPy 配置
+- setup.cfg                     # Pytest 配置
+- .env.example                  # 环境变量示例
+- Dockerfile                    # Docker 构建
+- README.md                     # 后端文档
+
+### 示例脚本
+- example_scrape.py            # 采集示例脚本
+
+## 统计
+- Python 文件: 22 个
+- 测试文件: 3 个
+- 配置文件: 7 个
+- 文档文件: 6 个
+- 总计: 38+ 个文件
+
+## 代码行数统计 (估算)
+- Python 代码: ~1500 行
+- 测试代码: ~250 行
+- 配置: ~200 行
+- 文档: ~800 行
+- 总计: ~2750 行
